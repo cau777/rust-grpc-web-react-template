@@ -3,7 +3,7 @@
 This project is a minimal starter template to quickly get grpc-web working with a Rust backend and React frontend.
 It takes care of proxying (Envoy not necessary), CORS, and generating types in TS and Rust.
 
-If you prefer to use a framework other than React, it shouldbe asy enough to change (just keep the commands in `project.json`)
+If you prefer to use a framework other than React, it should be easy enough to change (just keep the scripts in `package.json`)
 
 ### Adding a new service
 
