@@ -17,10 +17,9 @@ export const App: React.FC = () => {
 
         setIsLoading(true)
         const echoService = new EchoServiceClient('http://localhost:50051');
-        const req = new EchoRequest()
-        req.message = message
+        const req = new EchoRequest({ message })
         const res = await echoService.Echo(req, {})
-        console.log(res.message)
+        console.log('Received',  res.message)
         setResponse(res.message)
         setIsLoading(false)
       }}>
