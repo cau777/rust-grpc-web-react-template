@@ -17,6 +17,7 @@ async fn main() -> anyhow::Result<()> {
         .accept_http1(true)
         .layer(TraceLayer::new_for_grpc().on_request(Logger).on_response(Logger).on_failure(Logger))
         .add_service(
+            // Use tonic_web::enable to deal with CORS and OPTIONS requests
             tonic_web::enable(echo_service::messages::echo_service_server::EchoServiceServer::new(echo_service::EchoServiceImpl))
         )
         .serve(addr)
